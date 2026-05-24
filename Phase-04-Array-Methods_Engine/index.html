@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 04 — Advanced Data Array Engines</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+
+    <div class="app-wrapper">
+        <header class="app-header">
+            <div class="brand-meta">
+                <h1>ArrayEngine.io</h1>
+                <p>Phase 04: Functional Data Matrix Pipelines</p>
+            </div>
+            <div class="engine-status">
+                <span class="status-indicator-dot"></span> Core Engine Active
+            </div>
+        </header>
+
+        <!-- LIVE WORKSPACE LAB -->
+        <main class="matrix-grid">
+            
+            <!-- CONTROLS & INITIAL MATRIX DISPLAY -->
+            <section class="diagnostic-card source-box">
+                <h2>Source Data Matrix</h2>
+                <p class="section-desc">Raw immutable system assets payload array:</p>
+                <div class="matrix-display" id="raw-matrix-view">
+                    <!-- JavaScript will print initial data representation here -->
+                </div>
+                
+                <div class="action-dock">
+                    <button id="run-map-btn" class="engine-trigger-btn">⚡ Run .map() (Double Value)</button>
+                    <button id="run-filter-btn" class="engine-trigger-btn">🔍 Run .filter() (High Value)</button>
+                    <button id="run-reduce-btn" class="engine-trigger-btn">🧮 Run .reduce() (Aggregate Total)</button>
+                </div>
+            </section>
+
+            <!-- LIVE TRANSFORMATION OUTPUT TERMINALS -->
+            <section class="diagnostic-card output-box">
+                <h2>Pipeline Output Terminals</h2>
+                
+                <div class="terminal-slot">
+                    <div class="terminal-header">MAP OPERATION OUTPUT</div>
+                    <div id="map-terminal" class="terminal-body">Awaiting pipeline execution...</div>
+                </div>
+
+                <div class="terminal-slot">
+                    <div class="terminal-header">FILTER OPERATION OUTPUT</div>
+                    <div id="filter-terminal" class="terminal-body">Awaiting pipeline execution...</div>
+                </div>
+
+                <div class="terminal-slot">
+                    <div class="terminal-header">REDUCE OPERATION OUTPUT</div>
+                    <div id="reduce-terminal" class="terminal-body">Awaiting pipeline execution...</div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

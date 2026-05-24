@@ -1,0 +1,193 @@
+/* ==========================================================================
+   MATRIX ENVIRONMENT CORE VARIABLES
+   ========================================================================== */
+:root {
+    --bg-surface-system: #f8fafc;
+    --bg-card-system: #ffffff;
+    --border-terminal: #e2e8f0;
+    --text-primary-system: #0f172a;
+    --text-secondary-system: #475569;
+    --color-map-token: #6366f1;
+    --color-filter-token: #06b6d4;
+    --color-reduce-token: #ec4899;
+    --bg-console: #0f172a;
+    --text-console: #38bdf8;
+    --radius-system: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+body {
+    background-color: var(--bg-surface-system);
+    color: var(--text-primary-system);
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.app-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ==========================================================================
+   HEADER PIPELINE RUNTIME META
+   ========================================================================== */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px dashed var(--border-terminal);
+    padding-bottom: 25px;
+}
+
+.brand-meta h1 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.brand-meta p {
+    color: var(--text-secondary-system);
+    font-size: 0.85rem;
+    margin-top: 4px;
+}
+
+.engine-status {
+    background-color: var(--bg-card-system);
+    border: 1px solid var(--border-terminal);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-indicator-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10b981;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   BENTO DIAGNOSTICS GRID
+   ========================================================================== */
+.matrix-grid {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    gap: 30px;
+}
+
+.diagnostic-card {
+    background-color: var(--bg-card-system);
+    border: 1px solid var(--border-terminal);
+    border-radius: var(--radius-system);
+    padding: 25px;
+}
+
+.diagnostic-card h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary-system);
+    margin-bottom: 15px;
+}
+
+/* SOURCE CODE REPRESENTATION PANEL */
+.matrix-display {
+    background-color: var(--bg-console);
+    color: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    overflow-x: auto;
+    border-left: 4px solid var(--text-secondary-system);
+    margin-bottom: 20px;
+}
+
+.action-dock {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.engine-trigger-btn {
+    width: 100%;
+    background-color: var(--bg-card-system);
+    border: 1px solid var(--border-terminal);
+    color: var(--text-primary-system);
+    padding: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: left;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+#run-map-btn:hover { border-color: var(--color-map-token); background-color: #f5f3ff; }
+#run-filter-btn:hover { border-color: var(--color-filter-token); background-color: #ecfeff; }
+#run-reduce-btn:hover { border-color: var(--color-reduce-token); background-color: #fdf2f8; }
+
+.engine-trigger-btn:active {
+    transform: scale(0.98);
+}
+
+/* ==========================================================================
+   TERMINAL INTERFACE SLOTS
+   ========================================================================== */
+.terminal-slot {
+    margin-bottom: 20px;
+}
+
+.terminal-slot:last-child {
+    margin-bottom: 0;
+}
+
+.terminal-header {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary-system);
+    margin-bottom: 6px;
+}
+
+.terminal-body {
+    background-color: var(--bg-console);
+    color: var(--text-console);
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    border-left: 4px solid transparent;
+}
+
+#map-terminal { border-left-color: var(--color-map-token); color: #a78bfa; }
+#filter-terminal { border-left-color: var(--color-filter-token); color: #22d3ee; }
+#reduce-terminal { border-left-color: var(--color-reduce-token); color: #f472b6; }
+
+@media (max-width: 900px) {
+    .matrix-grid {
+        grid-template-columns: 1fr;
+    }
+}
