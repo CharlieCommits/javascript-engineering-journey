@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumPortfolio — Advanced Multi-Asset Ledger</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="light-theme">
+
+    <div class="app-wrapper">
+        
+        <!-- HEADER SYSTEM: Controls & Live Engine Telemetry -->
+        <header class="app-header">
+            <div class="brand-meta">
+                <h1>QuantumPortfolio</h1>
+                <p>Real-time cross-asset transaction engine</p>
+            </div>
+            
+            <div class="system-telemetry">
+                <div id="live-time">00:00:00 AM</div>
+                <div id="live-date">--/--/----</div>
+            </div>
+
+            <button id="theme-toggle" class="control-btn">🌓 Toggle System Theme</button>
+        </header>
+
+        <!-- LIVE ASYNC MARKET FEED STRIP -->
+        <section class="ticker-feed">
+            <div class="ticker-card">
+                <span class="ticker-badge">Live Feed</span>
+                <h2>Ethereum (ETH/USD)</h2>
+                <div id="eth-price-stream">Connecting to data node...</div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO LEDGER SYSTEM COMPONENT -->
+        <main class="portfolio-interface">
+            
+            <!-- TRANSACTIONS ENTRY CARD -->
+            <section class="interface-card form-box">
+                <h2>Log New Transaction</h2>
+                <div class="asset-form-container">
+                    <div class="input-group">
+                        <label for="asset-name">Asset Descriptor</label>
+                        <input type="text" id="asset-name" placeholder="e.g., Apple Stock or Solana Coin" autocomplete="off">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="asset-qty">Allocation Quantity</label>
+                        <input type="number" id="asset-qty" step="any" placeholder="e.g., 12.50">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="asset-type">Asset Classification</label>
+                        <select id="asset-type">
+                            <option value="Stock">📈 Equity / Stock</option>
+                            <option value="Crypto">🪙 Digital Asset / Crypto</option>
+                        </select>
+                    </div>
+
+                    <button id="commit-transaction-btn" class="action-btn">Commit Asset to Ledger</button>
+                </div>
+            </section>
+
+            <!-- LIVE RECORDINGS LEDGER LISTINGS -->
+            <section class="interface-card ledger-box">
+                <h2>Active Portfolio Ledger</h2>
+                <p class="ledger-subtitle">Dynamic asset data nodes rendered inside current browser context:</p>
+                
+                <!-- Dynamic operational list node -->
+                <ul id="ledger-list" class="ledger-container">
+                    <!-- JavaScript DOM Engine will inject elements selectively here -->
+                </ul>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
